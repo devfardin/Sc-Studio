@@ -12,7 +12,6 @@ class Service_slider
     }
     public function services_slider($att)
     {
-        ob_start();
         $default = [
             'category_name' => '',
         ];
@@ -29,36 +28,41 @@ class Service_slider
                 [
                     'taxonomy' => 'service-category',
                     'field' => 'slug',
-                    'terms' => $att['category_name']
+                    'terms' => sanitize_text_field($att['category_name'])
                 ]
             ];
         }
         
         $query = new WP_Query($query_args);
         if ($query->have_posts()):
+            ob_start();
             ?>
-            <div class="services-slider">
+            <section class="services-slider" aria-label="<?php esc_attr_e('Services', 'textdomain'); ?>">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <?php while ($query->have_posts()):
                             $query->the_post(); ?>
-                            <div class="swiper-slide">
-                                <a href="<?php echo esc_url(the_permalink()) ?>" class="service-item">
+                            <article class="swiper-slide">
+                                <a href="<?php echo esc_url(get_permalink()); ?>" class="service-item" aria-label="<?php echo esc_attr(sprintf(__('Learn more about %s', 'textdomain'), get_the_title())); ?>">
                                     <div class="service-icon">
-                                        <?php the_post_thumbnail('full'); ?>
+                                        <?php if (has_post_thumbnail()): ?>
+                                            <?php the_post_thumbnail('medium', ['alt' => esc_attr(get_the_title())]); ?>
+                                        <?php endif; ?>
                                     </div>
-                                    <h3 class="service-title"><?php the_title(); ?></h3>
+                                    <h3 class="service-title"><?php echo esc_html(get_the_title()); ?></h3>
                                 </a>
-                            </div>
+                            </article>
                         <?php endwhile; ?>
                     </div>
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
                 </div>
-            </div>
+            </section>
             <?php
+            wp_reset_postdata();
+            return ob_get_clean();
         endif;
         wp_reset_postdata();
-        return ob_get_clean();
+        return '';
     }
 }
