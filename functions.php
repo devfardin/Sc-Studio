@@ -4,26 +4,32 @@
  */
 
 // Security Constants
-define('THRESHOLD_WELLNESS_VERSION', '1.0.0');
-define('THRESHOLD_WELLNESS_DIR', __DIR__ . '/includes/');
-define('THRESHOLD_WELLNESS_SHORTCODE_DIR', __DIR__ . '/includes/shortcodes/');
+define('SC_STUDIO_VERSION', '1.0.0');
+define('SC_STUDIO_DIR', __DIR__ . '/includes/');
+define('SC_STUDIO_SHORTCODE_DIR', __DIR__ . '/includes/shortcodes/');
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
-class ThresholdWellnessFunctions {
-    public function __construct() {
+class ThresholdWellnessFunctions
+{
+    public function __construct()
+    {
         $this->load_dependencies();
         $this->init();
     }
-    
-    public function load_dependencies() {
-        require_once( THRESHOLD_WELLNESS_DIR . 'enqueue.php');
+
+    public function load_dependencies()
+    {
+        require_once(SC_STUDIO_DIR . 'enqueue.php');
+        require_once(SC_STUDIO_SHORTCODE_DIR . 'service-slider.php');
     }
-    
-    public function init() {
+
+    public function init()
+    {
         new ThresholdWellnessAssets();
+        new Service_slider();
     }
 }
 
