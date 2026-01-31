@@ -1,0 +1,185 @@
+/* Page Hero or Header style */
+.sc-studio__hero {
+    position: relative;
+    min-height: 55vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sc-studio__hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.sc-studio__hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 900px;
+    margin-top: 120px;
+}
+
+.sc-studio__breadcrumbs {
+    margin-bottom: 10px;
+}
+
+.sc-studio__breadcrumbs a,
+.sc-studio__breadcrumbs span {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Inter';
+}
+
+.sc-studio__breadcrumbs a:hover {
+    color: white;
+}
+
+.sc-studio__hero-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1;
+    font-family: "Cormorant Garamond";
+}
+
+@media only screen and (min-width: 768px) {
+    .sc-studio__hero {
+        min-height: 70vh;
+    }
+    
+    .sc-studio__hero-title {
+        font-size: 3rem;
+    }
+    .sc-studio__hero-content {
+        margin-top: 50;
+    }
+}
+
+/* Single page Content stle */
+
+.sc-studio__single-service-content .service_description{
+    font-size: 20px;
+    font-family: "Nunito Sans";
+    font-weight: 400;
+    line-height: 1.6;
+    color: #ffffff;
+
+}
+.sc-studio__single-service-content .section {
+    margin-top: 60px;
+
+}
+.sc-studio__single-service-content .section h2{
+    font-size: 45px;
+    font-family: "Cormorant Garamond";
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
+
+}
+.sc-studio__single-service-content .service_benefits .service_benefits_list{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+@media only screen and (min-width:768px) {
+    .sc-studio__single-service-content .service_benefits .service_benefits_list{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.sc-studio__single-service-content .service_benefits .service_benefits_list .list_item{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    background: #FBFAF9;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 12px;
+    font-size: 18px;
+    font-family: "Nunito Sans";
+    font-weight: 500;
+    color: #374151;
+    transition: 0.4s;
+
+}
+.sc-studio__single-service-content .service_benefits .service_benefits_list .list_item i{
+    
+    background: #14B8A620;
+    color: #14B8A6;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    display: grid;
+    place-items: center;
+   
+
+}
+
+/* FAQ Accordion Styles */
+.service_faqs_list{
+    margin-top: 30px;
+}
+.faq_item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.faq_question {
+    width: 100%;
+    padding: 20px;
+    background: #f8f9fa;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.faq_question:hover {
+    background: #e9ecef;
+}
+
+.faq_question.active {
+    background: #007cba;
+    color: white;
+}
+
+.faq_icon {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.faq_question.active .faq_icon {
+    transform: rotate(45deg);
+}
+
+.faq_answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq_answer.active {
+    padding: 20px;
+    max-height: 500px;
+}

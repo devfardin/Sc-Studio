@@ -70,14 +70,13 @@
 .swiper-button-next svg, .swiper-button-prev svg {
     width: 25px;
     height: 25px;
+    padding: 2px;
 }
 
 .swiper-button-next {
-    /* position: absolute !important; */
     right: 20px !important;
 }
 .swiper-button-prev {
-    /* position: absolute !important; */
     left: 20px !important;
 }
 
@@ -89,6 +88,7 @@
         left: 30px !important;
     }
 }
+
 @media only screen and (min-width:992px){
     .swiper-button-next {
         right: 40px !important;
@@ -96,7 +96,9 @@
     .swiper-button-prev {
         left: 30px !important;
     }
-}@media only screen and (min-width: 1400px){
+}
+
+@media only screen and (min-width: 1400px){
     .swiper-button-next {
         right: 100px !important;
     }
@@ -116,6 +118,7 @@
         font-size: 22px;
     }
 }
+
 @media only screen and (min-width: 992px) {
     
     .service-title {

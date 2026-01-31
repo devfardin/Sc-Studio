@@ -40,6 +40,13 @@ class ThresholdWellnessAssets {
             SC_STUDIO_VERSION,
             'all'
         );
+        wp_enqueue_style(
+            'sc-studio-single-service',
+            SC_STUDIO_STYLE_URI . 'single-service.css',
+            [],
+            SC_STUDIO_VERSION,
+            'all'
+        );
         
         
     }
@@ -64,6 +71,13 @@ class ThresholdWellnessAssets {
             'sc-studio-service-slider',
             SC_STUDIO_SCRIPT_URI . 'service-slider.js',
             ['sc-studio-service-slider-main'],
+            SC_STUDIO_VERSION,
+            true
+        );
+        wp_enqueue_script(
+            'sc-studio-single-service',
+            SC_STUDIO_SCRIPT_URI . 'single-service.js',
+            ['jquery'],
             SC_STUDIO_VERSION,
             true
         );

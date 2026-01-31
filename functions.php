@@ -24,12 +24,16 @@ class ThresholdWellnessFunctions
     {
         require_once(SC_STUDIO_DIR . 'enqueue.php');
         require_once(SC_STUDIO_SHORTCODE_DIR . 'service-slider.php');
+        require_once(SC_STUDIO_SHORTCODE_DIR . 'single-service-hero.php');
+        require_once(SC_STUDIO_SHORTCODE_DIR . 'single-service.php');
     }
 
     public function init()
     {
         new ThresholdWellnessAssets();
         new Service_slider();
+        new Single_service_hero();
+        new Single_service();
     }
 }
 
