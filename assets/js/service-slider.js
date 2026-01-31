@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     slidesPerView: Math.min(slideCount, 3),
                 },
                 1024: {
-                    slidesPerView: Math.min(slideCount, 6),
+                    slidesPerView: Math.min(slideCount, 4),
                 }
             }
         });

@@ -10,7 +10,6 @@ class Service_slider
     {
         add_shortcode('rander_services_slider', [$this, 'services_slider']);
     }
-
     public function services_slider($att)
     {
         ob_start();
@@ -44,12 +43,12 @@ class Service_slider
                         <?php while ($query->have_posts()):
                             $query->the_post(); ?>
                             <div class="swiper-slide">
-                                <div class="service-item">
+                                <a href="<?php echo esc_url(the_permalink()) ?>" class="service-item">
                                     <div class="service-icon">
                                         <?php the_post_thumbnail('full'); ?>
                                     </div>
                                     <h3 class="service-title"><?php the_title(); ?></h3>
-                                </div>
+                                </a>
                             </div>
                         <?php endwhile; ?>
                     </div>
