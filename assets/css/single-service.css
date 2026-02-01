@@ -57,10 +57,11 @@
     .sc-studio__hero {
         min-height: 70vh;
     }
-    
+
     .sc-studio__hero-title {
         font-size: 3rem;
     }
+
     .sc-studio__hero-content {
         margin-top: 50;
     }
@@ -68,7 +69,18 @@
 
 /* Single page Content stle */
 
-.sc-studio__single-service-content .service_description{
+.sc-studio__single-service-content {
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 1200px) {
+    .sc-studio__single-service-content {
+        max-width: 100%;
+    }
+}
+
+.sc-studio__single-service-content .service_description {
     font-size: 20px;
     font-family: "Nunito Sans";
     font-weight: 400;
@@ -76,31 +88,45 @@
     color: #ffffff;
 
 }
-.sc-studio__single-service-content .section {
-    margin-top: 60px;
 
+.sc-studio__single-service-content .section {
+    margin-top: 30px;
 }
-.sc-studio__single-service-content .section h2{
+
+@media only screen and (min-width:768px){
+    .sc-studio__single-service-content .section {
+        margin-top: 60px;
+    }
+}
+
+.sc-studio__single-service-content .section h2 {
     font-size: 45px;
     font-family: "Cormorant Garamond";
     font-weight: 500;
     color: #ffffff;
     text-align: center;
+    margin: 0;
 
 }
-.sc-studio__single-service-content .service_benefits .service_benefits_list{
+
+.sc-studio__single-service-content .service_benefits .service_benefits_list {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 15px;
-    margin-top: 30px;
+    margin-top: 15px;
+    padding: 0;
 }
+
+
+
 @media only screen and (min-width:768px) {
-    .sc-studio__single-service-content .service_benefits .service_benefits_list{
+    .sc-studio__single-service-content .service_benefits .service_benefits_list {
         grid-template-columns: repeat(2, 1fr);
+        margin-top: 30px;
     }
 }
 
-.sc-studio__single-service-content .service_benefits .service_benefits_list .list_item{
+.sc-studio__single-service-content .service_benefits .service_benefits_list .list_item {
     display: flex;
     align-items: center;
     justify-content: start;
@@ -115,8 +141,8 @@
     transition: 0.4s;
 
 }
-.sc-studio__single-service-content .service_benefits .service_benefits_list .list_item i{
-    
+
+.sc-studio__single-service-content .service_benefits .service_benefits_list .list_item i {
     background: #14B8A620;
     color: #14B8A6;
     width: 40px;
@@ -124,16 +150,28 @@
     border-radius: 50px;
     display: grid;
     place-items: center;
-   
+
 
 }
 
 /* FAQ Accordion Styles */
-.service_faqs_list{
-    margin-top: 30px;
+.service_faqs_list {
+    margin: 15px auto 0px;
+    max-width: 95%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
+
+@media only screen and (min-width:768px) {
+    .service_faqs_list {
+        max-width: 70%;
+        margin: 30px auto 0px;
+    }
+}
+
 .faq_item {
-    border: 1px solid #e0e0e0;
+    border: 1px solid #F9FAFB;
     border-radius: 8px;
     margin-bottom: 10px;
     overflow: hidden;
@@ -142,10 +180,12 @@
 .faq_question {
     width: 100%;
     padding: 20px;
-    background: #f8f9fa;
+    background: #ffffff;
+    color: var(--e-global-color-secondary);
+    color: #374151;
     border: none;
     text-align: left;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     cursor: pointer;
     display: flex;
@@ -155,16 +195,17 @@
 }
 
 .faq_question:hover {
-    background: #e9ecef;
+    background: rgb(226, 226, 226);
+    color: var(--e-global-color-7791cc6);
 }
 
 .faq_question.active {
-    background: #007cba;
-    color: white;
+    background: rgb(226, 226, 226);
+    color: var(--e-global-color-9fb59b1);
 }
 
 .faq_icon {
-    font-size: 20px;
+    font-size: 30px;
     transition: transform 0.3s ease;
 }
 
@@ -177,9 +218,122 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
+    font-size: 19px;
+    font-family: "Nunito Sans";
+    font-weight: 400;
+    line-height: 1.5;
+    color: #e6e5e5;
 }
 
 .faq_answer.active {
     padding: 20px;
     max-height: 500px;
+}
+
+/* End of FAQ Accordion Styles */
+
+
+/* CTA section styles */
+.section.service_cta {
+    margin: 60px auto 0;
+    text-align: center;
+    max-width: 100%;
+    background: white;
+    padding: 50px 30px;
+    border-radius: 10px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+@media only screen and (min-width:992px){
+    .section.service_cta{
+        max-width: 90%;
+        padding: 50px;
+    }
+}
+.section.service_cta .service_cta_title{
+    font-size: 35px;
+    font-family: "Cormorant Garamond";
+    font-weight: 500;
+    color: #111827;
+    margin: 0;
+    line-height: 1em;
+}
+
+
+@media only screen and (min-width:425px){
+    .section.service_cta .service_cta_title{
+       font-size: 40px;
+    }
+}
+@media only screen and (min-width:768px){
+    .section.service_cta .service_cta_title{
+       font-size: 60px;
+    }
+}
+
+.section.service_cta .service_cta_title span{
+    font-weight: 600;
+    color: var(--e-global-color-9fb59b1);
+}
+
+.section.service_cta .service_cta_des{
+    font-size: 19px;
+    font-family: "Nunito Sans";
+    font-weight: 400;
+    color: var(--e-global-color-text);
+    margin-top: 15px;
+}
+@media only screen and (min-width:768px){
+    .section.service_cta .service_cta_des{
+        font-size: 22px;
+    }
+}
+.service_cta_btn_wrapper{
+    margin-top: 0px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+@media only screen and (min-width:768px){
+    .service_cta_btn_wrapper{
+        margin-top: 10px;
+    }
+}
+.btn-primary{
+    padding: 14px 20px;
+    font-size: 16px;
+    font-family: "Nunito Sans";
+    font-weight: 600;
+    border-radius: 8px;
+    transition: .8s;
+}
+@media only screen and (min-width:768px){
+    .btn-primary{
+        font-size: 19px;
+        padding: 15px 25px;
+    }
+}
+.service_cta_button{
+    background: var(--e-global-color-9fb59b1);
+    color: white !important;
+}
+.service_cta_button:hover{
+    background: var(--e-global-color-7791cc6);
+    color: white !important;
+}
+.service_cta_button_outline{
+    background: transparent;
+    border: 2px solid var(--e-global-color-9fb59b1);
+    color: var(--e-global-color-9fb59b1) !important;
+}
+.service_cta_button_outline:hover{
+    background: var(--e-global-color-9fb59b1);
+    color: white !important;
 }

@@ -1,4 +1,7 @@
 <?php
+if(!defined('ABSPATH')){
+    exit; // Exit if accessed directly.
+}
 
 class Single_service_hero{
     function __construct()

@@ -1,4 +1,7 @@
 <?php
+if(!defined('ABSPATH')){
+    exit; // Exit if accessed directly.
+}
 
 class Single_service
 {
@@ -44,10 +47,10 @@ class Single_service
                             if ($faqs):
                                 foreach ($faqs as $index => $faq): ?>
                                     <div class="faq_item">
-                                        <button class="faq_question" data-faq="<?php echo esc_attr($index); ?>">
+                                        <div class="faq_question" data-faq="<?php echo esc_attr($index); ?>">
                                             <?php echo esc_html($faq['question']); ?>
                                             <span class="faq_icon">+</span>
-                                        </button>
+                                        </div>
                                         <div class="faq_answer" id="faq-<?php echo esc_attr($index); ?>">
                                             <?php echo wp_kses_post($faq['answer']); ?>
                                         </div>
@@ -55,8 +58,30 @@ class Single_service
                                 <?php endforeach;
                             endif; ?>
                         </div>
-
                     </div>
+
+                    <!-- call to action section -->
+                    <div class="section service_cta">
+                        <h2 class="service_cta_title">
+                            Redo att boka din <span> <?php echo esc_html(get_the_title()); ?> </span>
+                        </h2>
+                        <p class="service_cta_des">
+                            Boka din behandling med ett enkelt klick. Boka din behandling eller en kostnadsfri konsultation.
+                        </p>
+                        <div class="service_cta_btn_wrapper">
+
+                            <a target="_balnk" href="<?php echo esc_url('https://www.bokadirekt.se/places/sc-studio-57260'); ?>" class="service_cta_button btn-primary">
+                               Boka behandling
+                            </a>
+                            <a href="<?php echo esc_url(home_url('/contact-us')); ?>"
+                             class="service_cta_button_outline btn-primary">
+                                Kontakta oss
+                            </a>
+
+                        </div>
+                    </div>
+                    <!-- /call to action section -->
+
                 </div>
             </div>
 

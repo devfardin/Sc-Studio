@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const swiper = new Swiper('.mySwiper', {
             slidesPerView: Math.min(slideCount, 1),
-            spaceBetween: 30,
+            spaceBetween: 25,
             loop: slideCount > 1,
             navigation: {
                 nextEl: '.swiper-button-next',
@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 640: {
                     slidesPerView: Math.min(slideCount, 2),
                 },
-                768: {
+                1024: {
                     slidesPerView: Math.min(slideCount, 3),
                 },
-                1024: {
+                1200: {
                     slidesPerView: Math.min(slideCount, 4),
                 }
             }

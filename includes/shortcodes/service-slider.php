@@ -14,12 +14,13 @@ class Service_slider
     {
         $default = [
             'category_name' => '',
+            'post_limit' => '',
         ];
         $att = shortcode_atts($default, $att);
         
         $query_args = [
             'post_type' => 'service',
-            'posts_per_page' => -1,
+            'posts_per_page' => !empty($att['post_limit']) ? intval($att['post_limit']) : -1,
             'post_status' => 'publish'
         ];
         
